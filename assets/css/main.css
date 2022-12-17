@@ -1,4 +1,38 @@
+body {
+  background-image: url('/assets/images/bg.png');
+  background-size: cover;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  overflow: hidden;
+}
+
+.title {
+  max-width: 300px;
+  width: 100%;
+}
+
 canvas {
   border: 1px solid black;
   margin: auto;
+}
+
+.score-container {
+  width: 100%;
+  max-width: 150px;
+  padding: 15px 20px;
+  background-color: #0d0d0e;
+}
+
+.game-over {
+  background-color: #1d1d1d;
+  display: none;
+}
+
+.game-over  img {
+  width: 100%;
+  max-width: 800px;
+}
+
+.game-over .btn {
+  width: 100%;
+  max-width: 170px;
 }

@@ -1,0 +1,56 @@
+class LR extends Figure {
+
+  constructor(ctx, x, y, color = 'red') {
+    super(ctx, x, y, color);
+
+    this.maxPositions = 4;
+    this.pieces = [
+      new Square(this.ctx, x, y, color, 0),
+      new Square(this.ctx, x + 1, y, color, 1),
+      new Square(this.ctx, x + 2 ,y, color, 2),
+      new Square(this.ctx, x + 2, y + 1, color, 3),
+    ]
+  }
+
+  rotate() {
+    if (this.position == 1) {
+      this.pieces[0].x += 2;
+      this.pieces[0].y -= 2;
+      
+      this.pieces[1].x += 1;
+      this.pieces[1].y -= 1;
+
+      this.pieces[3].x -= 1;
+      this.pieces[3].y -= 1;
+    } else if (this.position == 2) {
+      this.pieces[0].x += 2;
+      this.pieces[0].y += 2;
+      
+      this.pieces[1].x += 1;
+      this.pieces[1].y += 1;
+
+      this.pieces[3].x += 1;
+      this.pieces[3].y -= 1;
+    } else if (this.position == 3) {
+      this.pieces[0].x -= 2;
+      this.pieces[0].y += 2;
+
+      this.pieces[1].x -= 1;
+      this.pieces[1].y += 1;
+
+      this.pieces[3].x += 1;
+      this.pieces[3].y += 1;
+    } else if (this.position == 4) {
+      this.pieces[0].x -= 2;
+      this.pieces[0].y -= 2;
+
+      this.pieces[1].x -= 1;
+      this.pieces[1].y -= 1;
+
+      this.pieces[3].x -= 1;
+      this.pieces[3].y += 1;
+    }
+
+    super.rotate();
+  }
+}

@@ -2,13 +2,15 @@ class SkewR extends Figure {
 
   constructor(ctx, x, y, color = 'red') {
     super(ctx, x, y, color);
-
     this.maxPositions = 2;
+  }
+
+  setupPieces() {
     this.pieces = [
-      new Square(this.ctx, x + 1, y, color, 0),
-      new Square(this.ctx, x + 1, y + 1, color, 1),
-      new Square(this.ctx, x, y + 1, color, 2),
-      new Square(this.ctx, x, y + 2, color, 3),
+      new Square(this.ctx, this.x + 1, this.y, this.color, 0),
+      new Square(this.ctx, this.x + 1, this.y + 1, this.color, 1),
+      new Square(this.ctx, this.x, this.y + 1, this.color, 2),
+      new Square(this.ctx, this.x, this.y + 2, this.color, 3),
     ]
   }
 

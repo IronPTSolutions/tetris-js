@@ -7,6 +7,9 @@ class Square extends Figure {
     this.h = SQUARE_SIZE;
     
     this.position = position;
+  }
+
+  setupPieces() {
     this.pieces = [this];
   }
 

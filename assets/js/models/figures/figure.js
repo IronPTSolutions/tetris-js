@@ -11,7 +11,18 @@ class Figure {
     this.pieces = [];
     this.position = 1;
     this.maxPositions = 1;
+    this.setupPieces();
   }
+
+  transportTo(x, y) {
+    this.x = x;
+    this.y = y;
+    this.setupPieces();
+  }
+
+  setupPieces() {
+    this.pieces = [];
+  } 
 
   onKeyEvent(event) {
     if (!this.isFreeze) {

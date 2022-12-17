@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
   const btnRestart = document.getElementById('btn-restart');
   btnRestart.addEventListener('click', () => location.reload());
 
-  const game = new Game('main-canvas', 'score-container');
+  const game = new Game('main-canvas', 'score-container', 'next-figure-canvas');
   game.start();
 
   game.onGameOver = (score) => {

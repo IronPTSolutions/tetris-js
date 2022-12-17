@@ -1,6 +1,6 @@
 class Game {
   
-  constructor(canvasId, scoreContainerId) {
+  constructor(canvasId, scoreContainerId, nextFigureCanvasId) {
     this.canvas = document.getElementById(canvasId);
     this.canvas.width = W_SQUARES * SQUARE_SIZE;
     this.canvas.height = H_SQUARES * SQUARE_SIZE;
@@ -10,6 +10,7 @@ class Game {
     this.nextFigure = undefined;
     this.matrix = new Matrix(this.ctx);
 
+    this.nextFigurePanel = new NextFigurePanel(nextFigureCanvasId);
     this.score = new Score(scoreContainerId);
 
     this.drawIntervalId = undefined;
@@ -55,6 +56,7 @@ class Game {
         this.nextFigure = new T(this.ctx, x, y, color);
         break;
     }
+    this.nextFigurePanel.setupFigure(this.nextFigure);
   }
 
   start() {
@@ -134,6 +136,7 @@ class Game {
     this.matrix.draw();
     this.figure.draw();
     this.score.render();
+    this.nextFigurePanel.draw();
   }
 
 }

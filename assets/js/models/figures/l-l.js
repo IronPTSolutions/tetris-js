@@ -2,15 +2,16 @@ class LL extends Figure {
 
   constructor(ctx, x, y, color = 'red') {
     super(ctx, x, y, color);
-
     this.maxPositions = 4;
-    this.pieces = [
-      new Square(this.ctx, x, y, color, 0),
-      new Square(this.ctx, x + 1, y, color, 1),
-      new Square(this.ctx, x + 2 ,y, color, 2),
-      new Square(this.ctx, x, y + 1, color, 3),
-    ]
+  }
 
+  setupPieces() {
+    this.pieces = [
+      new Square(this.ctx, this.x, this.y, this.color, 0),
+      new Square(this.ctx, this.x + 1, this.y, this.color, 1),
+      new Square(this.ctx, this.x + 2, this.y, this.color, 2),
+      new Square(this.ctx, this.x, this.y + 1, this.color, 3),
+    ]
   }
 
   rotate() {

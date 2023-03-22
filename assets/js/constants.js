@@ -11,6 +11,7 @@ const KEY_ROTATE = 38;
 const CANVAS_BG_COLOR = '#0d0d0e';
 const MATRIX_GRID_COLOR = '#1e2020';
 
+const MOVE_BACK_OFF_MS = 1000;
 const POINTS_BY_LINE = 100;
 
 const DEBUG = false;

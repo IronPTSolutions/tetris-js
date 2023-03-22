@@ -62,7 +62,7 @@ class Game {
   start() {
     if (!this.drawIntervalId) {
       this.dropFigure();
-      this.moveDownIntervalId = setInterval(() => this.move(), 1000);
+      this.moveDownIntervalId = setInterval(() => this.move(), MOVE_BACK_OFF_MS);
       this.drawIntervalId = setInterval(() => {
         this.clear();
         this.draw();
